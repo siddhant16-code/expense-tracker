@@ -36,7 +36,7 @@ Choose **one** of these two ways.
 
 **Option B: Use Git**
 ```
-git clone https://github.com/YOUR-USERNAME/expense-tracker.git
+git clone https://github.com/siddhant16-code/expense-tracker.git
 ```
 
 ### Step 3: Open the project folder in PowerShell
