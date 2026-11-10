@@ -14,6 +14,11 @@ A colourful web app built with **Streamlit** to track, visualise and understand 
 
 ---
 
+## 🤔 What happens when you run it?
+The app is a Python program. Running it starts a small server on **your own computer**, and your browser shows it as a web page. Nothing is uploaded anywhere, and your data stays on your PC.
+
+---
+
 ## 🚀 How to Run (Windows, step by step)
 
 ### Step 1: Install Python (one time only)
@@ -39,30 +44,54 @@ Choose **one** of these two ways.
 git clone https://github.com/siddhant16-code/expense-tracker.git
 ```
 
-### Step 3: Open the project folder in PowerShell
-Replace the path below with the folder where you extracted or cloned the project:
-```
-cd C:\Users\YourName\Downloads\expense-tracker
-```
-Type `dir` to check. You should see `app.py` and `requirements.txt` in the list.
+### Step 3: Open PowerShell inside the project folder
+Open the `expense-tracker` folder in File Explorer, click the **address bar** at the top, type `powershell` and press **Enter**.
 
-> **Tip:** Open the folder in File Explorer, click the address bar, type `powershell` and press Enter. PowerShell opens directly inside that folder.
+Check you're in the right place by typing:
+```
+dir
+```
+You should see `app.py` and `requirements.txt` in the list. If you don't, you are in the wrong folder.
+
+> Prefer typing the path? Use `cd C:\Users\YourName\Downloads\expense-tracker` (replace it with your real folder path).
 
 ### Step 4: Install the required libraries (one time only)
 ```
 python -m pip install -r requirements.txt
 ```
+Wait until it finishes.
 
 ### Step 5: Start the app
 ```
 python -m streamlit run app.py
 ```
-Your browser opens automatically at **http://localhost:8501**. If Streamlit asks for an email, just press **Enter**.
+Your browser opens automatically at **http://localhost:8501** and the Expense Tracker appears. If Streamlit asks for an email, just press **Enter**.
 
 ### Step 6: Stop the app
 Go back to PowerShell and press **Ctrl + C**.
 
-To run it again later, you only need Step 3 and Step 5.
+---
+
+## 🔁 Running it again later
+Skip the install step. Just open PowerShell in the project folder and run:
+```
+python -m streamlit run app.py
+```
+
+---
+
+## 👥 Want to run this project on another computer?
+1. Open https://github.com/siddhant16-code/expense-tracker
+2. Click **Code** → **Download ZIP** and extract it.
+3. Follow Steps 1, 3, 4 and 5 above.
+
+Or, if you have Git installed:
+```
+git clone https://github.com/siddhant16-code/expense-tracker.git
+cd expense-tracker
+python -m pip install -r requirements.txt
+python -m streamlit run app.py
+```
 
 ---
 
@@ -76,13 +105,19 @@ python3 -m streamlit run app.py
 
 ---
 
+## ⚠️ Two things to remember
+- **Keep the PowerShell window open** while you use the app. Closing it stops the app.
+- Your data is saved in `expenses.csv` the first time you add an expense. The file appears in the project folder automatically and is **not** uploaded to GitHub.
+
+---
+
 ## 🛠️ Troubleshooting
 
 | Problem | Fix |
 |---|---|
 | `python is not recognized` | Reinstall Python and tick **Add Python to PATH**, then restart PowerShell. |
-| `Repository not found` | Replace `YOUR-USERNAME` with the real GitHub username, or use Option A (ZIP). |
-| `Could not open requirements file` / `File does not exist: app.py` | You are in the wrong folder. Use `cd` to enter the project folder (check with `dir`). |
+| `Repository not found` | Check the username in the link is correct, or use Option A (ZIP). |
+| `Could not open requirements file` / `File does not exist: app.py` | You are in the wrong folder. Open PowerShell inside the project folder and check with `dir`. |
 | `No module named streamlit` | Run Step 4 again. |
 | Browser did not open | Manually open http://localhost:8501 |
 | Port already in use | Run `python -m streamlit run app.py --server.port 8502` |
@@ -90,7 +125,7 @@ python3 -m streamlit run app.py
 ---
 
 ## 💾 Where is my data saved?
-Your expenses are saved on your own computer in `expenses.csv` and your settings in `settings.json`. Both files are created automatically in the project folder the first time you add an expense. They are excluded from Git by `.gitignore`, so your personal finances are never uploaded to GitHub.
+Your expenses are saved on your own computer in `expenses.csv` and your settings in `settings.json`. Both files are created automatically in the project folder. They are excluded from Git by `.gitignore`, so your personal finances are never uploaded to GitHub.
 
 ## 🧰 Tech stack
 Python · Streamlit · Pandas · Altair
